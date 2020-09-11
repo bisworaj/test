@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oops js</title>
+</head>
+<body>
+    <h1> object oriented js</h1>
+    <h2><code>test subject</code></h2>
+
+    <button >click</button>
+<style>
+    h1{margin: 0;padding:0;}
+    span{color:#fff;font-family: sans-serif;}
+</style>
+</body>
+<!-- <script src="../javaScript/oops js/this.js"></script> -->
+<script src="../javaScript/oops js/constructor.js"></script>
+<script>
+    var laters=[' ','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o',
+    'p','q','r','s','t','u','v','w','x','y','z'];
+
+    const body= document.body;
+    const heading=document.querySelector('h1')
+    const subtext=document.querySelector('code')
+    const x=document.querySelector('p')
+//////////////////////
+    const textlis=Array.from(subtext.innerText)
+
+    const laterIndex=[...textlis].map((x)=>{
+        return [...laters].indexOf(x)
+    })
+    const num=laterIndex.join("-")
+////////////
+
+    
+
+    body.style.height="100vh";
+/////\\\\\\\/////////\\\\\\\\\\////////\\\\\\\\//////\\\\\
+    body.addEventListener('mousemove',runEvent);
+
+    function runEvent(e){
+        randm=Math.round(Math.random()*100);
+        console.log(`event type :${e.type}`);
+        
+        heading.innerHTML=`<h1>MouseX: <span>${e.offsetX}</span>
+                         MouseY: <span>${e.offsetY}</span >
+                            MouseZ: <span>${randm}</span></h1>`
+        document.body.style.backgroundColor=`rgb(${e.offsetX},${e.offsetY},${randm})`;
+
+
+        subtext.innerText=num;
+
+        e.preventDefault()
+    }
+</script>
+</html>
